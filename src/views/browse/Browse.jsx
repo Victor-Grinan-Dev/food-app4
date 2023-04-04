@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Card from '../../Ui/Card';
 import css from './browse.module.css';
@@ -8,7 +8,7 @@ import css from './browse.module.css';
 // import { db } from '../../firebase-config';
 // import {collection, addDoc, Timestamp} from 'firebase/firestore';
 
-const databaseAPI = 'https://foodapp-c71e2-default-rtdb.europe-west1.firebasedatabase.app/database';
+// const databaseAPI = 'https://foodapp-c71e2-default-rtdb.europe-west1.firebasedatabase.app/database';
 const countriesAPI = 'https://restcountries.com/v2/all'
 
 function Browse() {
@@ -23,23 +23,29 @@ function Browse() {
   });
 
   const searchHandler = (e) => {
+    console.log(e.target.value)
     setSearch(e.target.value); 
     };
 
   // const getRecipes = () => axios.get(databaseAPI);
-  // const getCountries = () => axios.get(countriesAPI);
+  const getCountries = () => axios.get(countriesAPI);
 
-  // useEffect(() => {
-  //   setLoading(true);
+  useEffect(() => {
+    setLoading(true);
+    setRecipes([]);
+    Promise(getCountries()).then(res => {
+      const countriesData = res;
+      setCountry(countriesData.data);
+    })
   //   Promise.all([getRecipes(), getCountries()]).then(function (results) {
   //     const recipesData = results[0];
   //     const countriesData = results[1]; 
   //     setRecipes(recipesData.data);
   //     setCountry(countriesData.data);
 
-  //     setLoading(false);
-  //   });
-  // }, []);
+      setLoading(false);
+    // });
+  }, []);
 
   if (loading) {
     return <p>Loading...</p>;

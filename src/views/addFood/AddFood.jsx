@@ -46,7 +46,7 @@ function AddFood() {
   const changeImage = (e) => {
     const head_api = 'https://source.unsplash.com/';
 
-    if ((e.target.value.indexOf(head_api) == -1)){
+    if ((e.target.value.indexOf(head_api) === -1)){
       const randomPic = RANDOM_IMG_API + e.target.value + '-food';
       setData({ ...data, [e.target.name]: randomPic }); 
     } else {
@@ -75,6 +75,8 @@ function AddFood() {
 
   const handleSubmit = async (e) => {
     console.log("sudmited!!")
+    changeImage();
+    
   //   //creating
   //   e.preventDefault()
   //   try {
@@ -84,19 +86,19 @@ function AddFood() {
   //     alert(err)
   //   }
   }
-/*
-  const submitData = (e) => {
-    e.preventDefault();
-    if (!data.image || data.image === ""){
-      const endPoint = data.name.split(' ').join('-')
-      const randomPic = RANDOM_IMG_API + endPoint;
-      setData(data.image = randomPic)
-    }
-    axios.post(DB_API, data);
-    setData(emptyState);
-  };
 
-*/
+  // const submitData = (e) => {
+  //   e.preventDefault();
+  //   if (!data.image || data.image === ""){
+  //     const endPoint = data.name.split(' ').join('-')
+  //     const randomPic = RANDOM_IMG_API + endPoint;
+  //     setData(data.image = randomPic)
+  //   }
+  //   axios.post(DB_API, data);
+  //   setData(emptyState);
+  // };
+
+
 
   return (
     <div className={css.addFood}>

@@ -4,8 +4,6 @@ import { NavLink } from 'react-router-dom';
 import css from './navBar.module.css';
 import Insta from '../assets/images/insta-white-border.png';
 
-import { Link } from 'react-router-dom';
-
 function Navegator() {
 
   return (
