@@ -3,6 +3,7 @@ import logo from '../assets/images/meLogo.png';
 import { NavLink } from 'react-router-dom';
 import css from './navBar.module.css';
 import Insta from '../assets/images/insta-white-border.png';
+import { isMobile } from 'react-device-detect';
 
 function Navegator() {
 
@@ -14,11 +15,20 @@ function Navegator() {
       </div>
 
       <div className={css.navLinkContainer}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="browse">Browse</NavLink>
-        <NavLink to='/about'> About </NavLink>
-        <NavLink to="/add">Add new recipe</NavLink>
-        <a href="https://en.bc.fi/qualifications/full-stack-web-developer-program/" target="blank">HBC</a>
+        {
+          !isMobile ? 
+          <>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="browse">Browse</NavLink>
+              <NavLink to='/about'> About </NavLink>
+              <NavLink to="/add">Add new recipe</NavLink>
+              <a href="https://en.bc.fi/qualifications/full-stack-web-developer-program/" target="blank">HBC</a>
+          </> :
+          <>
+          <div></div>
+          <a> Menu</a>
+          </>
+        }
         <a href="https://instagram.com/feelit_cookit?igshid=YmMyMTA2M2Y=" target="blank">
             <img src={Insta} className={css.some} alt="insta"/>
         </a>
