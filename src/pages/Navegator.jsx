@@ -21,12 +21,14 @@ function Navegator() {
               <NavLink to="/">Home</NavLink>
               <NavLink to="browse">Browse</NavLink>
               <NavLink to='/about'> About </NavLink>
+              {/* TODO: if logged show "ADD" tab */}
               <NavLink to="/add">Add new recipe</NavLink>
               <a href="https://en.bc.fi/qualifications/full-stack-web-developer-program/" target="blank">HBC</a>
           </> :
           <>
           <div></div>
-          <a> Menu</a>
+          {/* TODO: Make a hamburger menu */}
+          <NavLink to="/">Menu</NavLink>
           </>
         }
         <a href="https://instagram.com/feelit_cookit?igshid=YmMyMTA2M2Y=" target="blank">

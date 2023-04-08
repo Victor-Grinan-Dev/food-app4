@@ -9,6 +9,8 @@ import Browse from './views/browse/Browse';
 import AddFood from './views/addFood/AddFood';
 import FoodSingle from './views/foodSingle/FoodSingle';
 
+console.log('admin@foodapp.dev Abcd1234');
+
 function App() {
   return (
     <HashRouter className="App"> 
