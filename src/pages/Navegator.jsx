@@ -22,7 +22,7 @@ function Navegator() {
               <NavLink to="browse">Browse</NavLink>
               <NavLink to='/about'> About </NavLink>
               {/* TODO: if logged show "ADD" tab */}
-              <NavLink to="/add">Add new recipe</NavLink>
+              <NavLink to="/add"> +Recipe</NavLink>
               <a href="https://en.bc.fi/qualifications/full-stack-web-developer-program/" target="blank">HBC</a>
           </> :
           <>

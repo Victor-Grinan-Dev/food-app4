@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import css from './card.module.css';
+import { db } from '../firebase';
+import { deleteDoc, doc } from 'firebase/firestore';
+
+const deleteRecipe = async (id) => {
+  const recipeDoc = doc(db, "recipes", id);
+  await deleteDoc(recipeDoc);
+}
 
 const Card = ({ name, description, image, data, country }) => {
 
@@ -11,10 +18,15 @@ const Card = ({ name, description, image, data, country }) => {
        
       <div className={css.cardHeader}>
       <Link to={name} state={{ data: data, country: country }}>
-      <h2 className={css.name}>{capitalStart(name)}:</h2>
+        <h2 className={css.name}>{capitalStart(name)}:</h2>
       </Link>
         
-        <div><button>edit</button> <button>delete</button></div>
+        <div>
+          <Link to={`edit/${name}`} state={{ data: data, country: country }}>edit</Link> 
+          <button onClick={() => {
+            deleteRecipe(data.id);
+          }} >delete</button>
+        </div>
         <img src={country?.flag} alt={country?.name} className={css.flag}/>
       </div>
     

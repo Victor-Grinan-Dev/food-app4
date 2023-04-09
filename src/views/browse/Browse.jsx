@@ -31,6 +31,7 @@ function Browse() {
     }
     getRecipes();
     getCountries(); //ok
+    setLoading(false);
   }, []);
  
   // const [country, setCountry] = useState([]);
@@ -45,25 +46,9 @@ function Browse() {
     setSearch(e.target.value); 
     };
 
-  // // const getRecipes = () => axios.get(databaseAPI);
-  // const getCountries = () => axios.get(countriesAPI);
-
-  //
-  //   setLoading(true);
-  //   const getRecipes = axios.get()
-  // //   Promise.all([getRecipes(), getCountries()]).then(function (results) {
-  // //     const recipesData = results[0];
-  // //     const countriesData = results[1]; 
-  // //     setRecipes(recipesData.data);
-  // //     setCountry(countriesData.data);
-
-  //     setLoading(false);
-  //   // });
-
-
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className={css.browse}>

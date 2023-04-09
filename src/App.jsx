@@ -21,6 +21,7 @@ function App() {
                 <Route path="browse" element={<Browse />} />
                 <Route path="add" element={<AddFood />} />
                 <Route path="browse/:single" element={<FoodSingle />} />
+                <Route path="browse/edit/:single" element={<AddFood />} />
                 <Route path="*" element={<NotFound/>}></Route> 
               </Route>       
           </Routes>   
