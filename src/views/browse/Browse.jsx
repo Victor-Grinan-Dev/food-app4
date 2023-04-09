@@ -15,7 +15,6 @@ function Browse() {
   const [loading, setLoading] = useState(false);
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState('');
-  const [country, setCountry] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const recipesCollectionRef = collection(db, "recipes");
 
@@ -32,6 +31,7 @@ function Browse() {
     getRecipes();
     getCountries(); //ok
     setLoading(false);
+    // eslint-disable-next-line
   }, []);
  
   // const [country, setCountry] = useState([]);
