@@ -8,12 +8,16 @@ const Card = ({ name, description, image, data, country }) => {
 
   return (
     <div className={css.cardBox}>
-      
+       
       <div className={css.cardHeader}>
-        <h2 className={css.name}>{capitalStart(name)}:</h2>
-        <img src={country.flag} alt={country.name} className={css.flag}/>
+      <Link to={name} state={{ data: data, country: country }}>
+      <h2 className={css.name}>{capitalStart(name)}:</h2>
+      </Link>
+        
+        <div><button>edit</button> <button>delete</button></div>
+        <img src={country?.flag} alt={country?.name} className={css.flag}/>
       </div>
-      
+    
       <div className={css.imageContainer}>
         <Link to={name} state={{ data: data, country: country }}>
           <img src={image} alt={name} className={css.image}/> 
@@ -21,13 +25,14 @@ const Card = ({ name, description, image, data, country }) => {
       </div>
       
       <p className={css.description}>{capitalStart(description)}</p>
-      
+     
       
       <div className={css.seeMore}>
         <Link to={name} state={{ data: data, country: country }}>
           See more
         </Link>
       </div>
+     
     </div>
   );
 };

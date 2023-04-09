@@ -7,8 +7,7 @@ const FoodSingle = () => {
   const recipe = location.state.data;
   const country = location.state.country;
 
-  const capitalStart = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-
+  //const capitalStart = (str) => str.charAt(0).toUpperCase() + str.slice(1);
   return (
     <div className={css.singleFood}>
       <div className={css.imageContainer}>
@@ -17,19 +16,24 @@ const FoodSingle = () => {
       
       <div className={css.dataContainer}>
         <div className={css.dataHeader}>
-          <h2 className={css.foodName}>"{capitalStart(recipe.name)}"</h2>
-          <img id={recipe.name} src={country.flag} alt={country.name}  className={css.flag} />
+          <h2 className={css.foodName}>"{recipe.name}"</h2>
+          <img id={recipe.name} src={country?.flag} alt={country?.name}  className={css.flag} />
         </div>
+        <div>
+        <h3>Description:  </h3>
+          {recipe.description}
+        </div>
+        
         <h3>Ingredients:</h3>
         <ul>
         { 
-          recipe.ingredients.map((item) => (
-            <li id={item.id}>{capitalStart(item.ingredient)} - {item.quantity} </li>
+          recipe.ingredients.map((item,i) => (
+            <li key={i} id={item.id}>{item.ingredient} - {item.quantity} {item.unit} </li>
           ))
         }
         </ul>
         <br/>
-        <p className={css.instructionText}>{capitalStart(recipe.instruction)}</p>
+        <p className={css.instructionText}>{recipe.instruction}</p>
       </div>
     </div>
   );
