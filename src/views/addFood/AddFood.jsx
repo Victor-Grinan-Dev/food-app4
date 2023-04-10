@@ -61,7 +61,7 @@ function AddFood() {
 
   const changeCountry = (e) => {
     const country = countries.find((item) => item.name === e.target.value);
-    setData({ ...data, country_code: country.alpha2Code });
+    setData({ ...data, country_code: country.alpha3Code });
   };
 
   const changeIngredient = (e, i) => {

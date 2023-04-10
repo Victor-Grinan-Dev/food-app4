@@ -15,26 +15,31 @@ function Navegator() {
       </div>
 
       <div className={css.navLinkContainer}>
-        {
-          !isMobile ? 
-          <>
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="browse">Browse</NavLink>
-              <NavLink to='/about'> About </NavLink>
+
+              <NavLink to="/"><span className="material-symbols-outlined">
+                home
+              </span></NavLink>
+              <NavLink to="browse"><span className="material-symbols-outlined">
+              restaurant
+                </span></NavLink>
+              <NavLink to='/about'> <span className="material-symbols-outlined">
+                info
+                </span> </NavLink>
               {/* TODO: if logged show "ADD" tab */}
-              <NavLink to="/add"> +Recipe</NavLink>
-              <a href="https://en.bc.fi/qualifications/full-stack-web-developer-program/" target="blank">HBC</a>
-          </> :
-          <>
-          <div></div>
-          {/* TODO: Make a hamburger menu */}
-          <NavLink to="/">Menu</NavLink>
-          </>
-        }
-        <a href="https://instagram.com/feelit_cookit?igshid=YmMyMTA2M2Y=" target="blank">
+              <NavLink to="/add"> <span className="material-symbols-outlined">
+                  add
+                  </span><span className="material-symbols-outlined">
+                  restaurant
+                </span></NavLink>
+              <a href="https://en.bc.fi/qualifications/full-stack-web-developer-program/" target="blank"><span className="material-symbols-outlined">
+school
+</span></a>
+        
+        
+      </div> 
+      <a href="https://instagram.com/feelit_cookit?igshid=YmMyMTA2M2Y=" target="blank">
             <img src={Insta} className={css.some} alt="insta"/>
         </a>
-      </div> 
     </div>
   )
 }

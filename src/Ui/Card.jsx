@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import css from './card.module.css';
+
 import { db } from '../firebase';
 import { deleteDoc, doc } from 'firebase/firestore';
 
@@ -17,16 +18,10 @@ const Card = ({ name, description, image, data, country }) => {
     <div className={css.cardBox}>
        
       <div className={css.cardHeader}>
-      <Link to={name} state={{ data: data, country: country }}>
-        <h2 className={css.name}>{capitalStart(name)}:</h2>
-      </Link>
+        <Link to={name} state={{ data: data, country: country }}>
+          <h2 className={css.name}>{capitalStart(name)}:</h2>
+        </Link>
         
-        <div>
-          <Link to={`edit/${name}`} state={{ data: data, country: country }}>edit</Link> 
-          <button onClick={() => {
-            deleteRecipe(data.id);
-          }} >delete</button>
-        </div>
         <img src={country?.flag} alt={country?.name} className={css.flag}/>
       </div>
     
@@ -39,10 +34,25 @@ const Card = ({ name, description, image, data, country }) => {
       <p className={css.description}>{capitalStart(description)}</p>
      
       
-      <div className={css.seeMore}>
-        <Link to={name} state={{ data: data, country: country }}>
-          See more
+      <div className={css.cardFooter}>
+        <Link className={css.cardBtn} to={name} state={{ data: data, country: country }}>
+          <span className="material-symbols-outlined">
+            visibility
+          </span>
         </Link>
+        <Link className={css.cardBtn} to={`edit/${name}`} state={{ data: data, country: country }}>
+            <span className="material-symbols-outlined">
+              edit
+            </span>
+          </Link> 
+
+          <span className={css.cardBtn} onClick={() => {
+            deleteRecipe(data.id);
+          }} >
+            <span className="material-symbols-outlined ">
+              delete
+            </span>
+          </span>
       </div>
      
     </div>
