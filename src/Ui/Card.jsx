@@ -11,7 +11,7 @@ const deleteRecipe = async (id) => {
 }
 
 const Card = ({ name, description, image, data, country }) => {
-
+console.log(country)
   const capitalStart = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
   return (
@@ -21,8 +21,8 @@ const Card = ({ name, description, image, data, country }) => {
         <Link to={name} state={{ data: data, country: country }}>
           <h2 className={css.name}>{capitalStart(name)}:</h2>
         </Link>
-        
-        <img src={country?.flag} alt={country?.name} className={css.flag}/>
+        <Link to={`https://victor-grinan-dev.github.io/countries_app1/#/Browse`}><img src={country?.flag} alt={country?.name} className={css.flag}/></Link>
+
       </div>
     
       <div className={css.imageContainer}>
