@@ -1,35 +1,13 @@
 
-
-.homeBox{
-    height: 80vh;
-}
 .boxWrapper{ 
     display: flex;
-    width: 100vw0px;
+    width: 100vw;
     justify-content: space-around;
     position: relative;
-    bottom: 0;
 }
-
-.box{
-    margin: 20px;
-    width: 30vw;
-    height: 200px;
-    border: 2px groove darkred;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-container{
-    position: relative;
-    width:100vw;
-    height: 80vh;
-    object-fit: cover;
-  }
   
 .video{
-    height: 90vh;
+    height: 85vh;
     width: 100vw;
     filter: saturate(0);
     object-fit: cover;

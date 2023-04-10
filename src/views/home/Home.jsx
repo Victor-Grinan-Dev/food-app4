@@ -5,7 +5,7 @@ import css from './home.module.css';
 function Home() {
   return (
     <div className={css.homeBox}>
-        <div className={css.videoContainer}>
+
             <video
                 autoPlay
                 muted
@@ -17,7 +17,7 @@ function Home() {
 
             <h1 className={css.title}>"Feel it, Cook it"</h1>
             <p className={css.slogan}> "A site for your favorite food" </p>
-        </div>
+       
     </div>
   )
 }

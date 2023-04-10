@@ -131,7 +131,7 @@ function AddFood() {
              <input type="text" name="image" id="image" onChange={changeData} className={css.input1} placeholder={data?.image || ''} />
           </div>
           
-             https://source.unsplash.com/[img_id]
+          https://source.unsplash.com/[img_id]
           
           <div className={css.ingredientsArea}>             
             <p>Ingredients</p>         

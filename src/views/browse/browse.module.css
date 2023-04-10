@@ -1,13 +1,10 @@
 .browse{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
-.search{
-    margin-top: 20px;
-}
+
 
 .searchImput{
     line-height: 30px;
