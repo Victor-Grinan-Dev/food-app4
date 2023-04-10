@@ -3,7 +3,6 @@ import logo from '../assets/images/meLogo.png';
 import { NavLink } from 'react-router-dom';
 import css from './navBar.module.css';
 import Insta from '../assets/images/insta-white-border.png';
-import { isMobile } from 'react-device-detect';
 
 function Navegator() {
 
