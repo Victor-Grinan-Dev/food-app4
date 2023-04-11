@@ -205,6 +205,13 @@ function AddFood() {
             <br />
             Try from here:
             <a href="https://imgur.com/"> imgur.com</a>
+            or copy this ready urls:
+            <br />
+            https://i.imgur.com/1IrjFmRb.jpg (burger)
+            <br />
+            https://i.imgur.com/tfEis8D.jpeg (nuggets)
+            <br />
+            https://i.imgur.com/VUEGlFp.jpeg (pizza)
           </div>
         )}
         <div className={css.ingredientsArea}>
