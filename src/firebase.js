@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
-  authDomain: "foodapp4-ee4ca.firebaseapp.com",
-  projectId: "foodapp4-ee4ca",
-  storageBucket: "foodapp4-ee4ca.appspot.com",
-  messagingSenderId: "307704093485",
-  appId: "1:307704093485:web:5d005494b98d664d4dd1a4",
-  measurementId: "G-EXJTJYHRVF"
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: "foodapp4-ee4ca", //doesnt work
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MESSUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
