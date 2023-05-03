@@ -1,11 +1,16 @@
 .singleFood{
     display: flex;
     justify-content: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .imageContainer{
     width: 50vw;
-    height: 87vh;
+    height: 93vh;
 }
 
 .image{
@@ -34,4 +39,43 @@
 
 .instructionText{
     margin-right: 70px;
+}
+
+@media only screen and (max-width: 320px){
+    .singleFood {
+        font-size: 12px;
+    }
+
+    .flag{
+        width: 30px;
+        height: 30px;
+    }
+
+    .dataContainer{
+        margin-left: 0;
+    }
+
+    .imageContainer{
+        height: 90vh;
+    }
+
+}
+
+@media only screen and (max-width: 280px){
+    .singleFood {
+        font-size: 12px;
+    }
+
+    .flag{
+        width: 30px;
+        height: 30px;
+    }
+
+    .dataContainer{
+        margin-left: 0;
+    }
+
+    .imageContainer{
+        height: 95vh;
+    }
 }
