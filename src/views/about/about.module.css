@@ -1,12 +1,11 @@
 .About{
     margin: 10px;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    right: 0;
 
-    top:70px;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    top:100px;
 }
 h1{
     margin-bottom: 10px;
