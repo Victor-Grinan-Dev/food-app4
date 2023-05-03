@@ -182,6 +182,7 @@ function AddFood() {
             <span
               className="material-symbols-outlined"
               onClick={() => setIsShowHint(!isShowHint)}
+              style={{ cursor: "pointer" }}
             >
               {!isShowHint ? "help" : "cancel"}
             </span>
@@ -223,7 +224,10 @@ function AddFood() {
                     <div className={css.spaced}>
                       <label htmlFor="ingredient">Ingredient </label>
                       <span onClick={() => deleteIngredient(i)}>
-                        <span className="material-symbols-outlined">
+                        <span
+                          className="material-symbols-outlined"
+                          style={{ cursor: "pointer" }}
+                        >
                           do_not_disturb_on
                         </span>
                       </span>
@@ -280,7 +284,10 @@ function AddFood() {
                     <div className={css.spaced}>
                       <label htmlFor="ingredient">Ingredient #{i + 1} </label>
                       <span onClick={() => deleteIngredient(i)}>
-                        <span className="material-symbols-outlined">
+                        <span
+                          className="material-symbols-outlined"
+                          style={{ cursor: "pointer" }}
+                        >
                           do_not_disturb_on
                         </span>
                       </span>
