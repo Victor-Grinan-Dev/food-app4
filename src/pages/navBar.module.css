@@ -23,6 +23,7 @@
 
 .navLinkContainer{
     width: 65vw;
+    min-width: 145px;
     margin: 0 20px;
 
     display: flex;
@@ -42,4 +43,19 @@
 .cardBtn,
 .navLinkContainer a:hover{
   text-shadow: 0 0 15px rgb(253, 253, 253);
+}
+
+@media only screen and (max-width: 320px){
+  .some,
+  .logo img{
+    margin: 5px 5px;
+  }
+}
+
+@media only screen and (max-width: 280px){
+  .some,
+  .logo img{
+    width: 30px;
+    margin: 5px 0px;
+  }
 }
