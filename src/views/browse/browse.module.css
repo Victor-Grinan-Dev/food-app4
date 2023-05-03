@@ -1,13 +1,22 @@
 .browse{
     display: flex;
+    margin-bottom: 200px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+    top: 120px;
 }
 
+.search{
+    position: fixed;
+    top: 100px;
+    z-index: 3;
+}
 
-.searchImput{
+.searchInput{
     line-height: 30px;
+    border-radius: 5px;
 }
 
 .showCards{
