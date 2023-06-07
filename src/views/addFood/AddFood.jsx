@@ -124,6 +124,11 @@ function AddFood() {
     <div className={css.addFood}>
       <form className="form">
         <h2>Add a new recipe: </h2>
+        <p>
+          <span className="material-symbols-outlined">
+              warning
+          </span>
+            Random users can't add or edit recipes:</p>
         <br />
         <div className={css.spaced}>
           <label htmlFor="name">Name</label>
