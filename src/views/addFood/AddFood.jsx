@@ -39,15 +39,21 @@ function AddFood() {
 
   const [countries, setCountries] = useState([]);
 
+  const [ingredients, setIngredients] = useState([
+    { id: 1, ingredient: "", quantity: "", unit: "" },
+  ]);
+
   useEffect(() => {
     axios.get(COUNTRIES_API).then((response) => {
       setCountries(response?.data);
     });
   }, []);
 
-  const [ingredients, setIngredients] = useState([
-    { id: 1, ingredient: "", quantity: "", unit: "" },
-  ]);
+  useEffect(() => {
+    if(locationData){
+      setIngredients(locationData?.ingredients);
+    }
+  }, [locationData]);
 
   const capitalStart = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -222,68 +228,7 @@ function AddFood() {
         )}
         <div className={css.ingredientsArea}>
           <p style={{ fontWeight: "bold" }}>Ingredients:</p>
-          {locationData.ingredients
-            ? locationData.ingredients.map((ingredient, i) => {
-                return (
-                  <div key={i} className={css.spacedIngredients}>
-                    <div className={css.spaced}>
-                      <label htmlFor="ingredient">Ingredient </label>
-                      <span onClick={() => deleteIngredient(i)}>
-                        <span
-                          className="material-symbols-outlined"
-                          style={{ cursor: "pointer" }}
-                        >
-                          do_not_disturb_on
-                        </span>
-                      </span>
-                      <input
-                        type="text"
-                        name="ingredient"
-                        id="ingredient"
-                        onChange={(e) => changeIngredient(e, i)}
-                        className={css.input2}
-                        placeholder={ingredient.ingredient}
-                      />
-                    </div>
-
-                    <div className={css.spaced}>
-                      <label htmlFor="quantity">Quantity </label>
-                      <input
-                        type="text"
-                        name="quantity"
-                        id="quantity"
-                        onChange={(e) => changeIngredient(e, i)}
-                        className={css.input2}
-                        placeholder={ingredient.quantity}
-                      />
-                    </div>
-
-                    <div className={css.spaced}>
-                      <label htmlFor="unit">Unit </label>
-                      <select
-                        name="unit"
-                        id="unit"
-                        onChange={(e) => changeIngredient(e, i)}
-                        className={css.input1}
-                      >
-                        <option value={ingredient.unit || ""}>
-                          {" "}
-                          {ingredient.unit || "Select Unit..."}{" "}
-                        </option>
-                        <option value="teaspoon">teaspoon </option>
-                        <option value="tablespoon"> tablespoon </option>
-                        <option value="cup"> cup </option>
-                        <option value="grams"> grams </option>
-                        <option value="grams"> liters </option>
-                        <option value="grams"> oz </option>
-                        <option value="unit"> unit </option>
-                      </select>
-                    </div>
-                    <div className={css.division} />
-                  </div>
-                );
-              })
-            : ingredients.map((_, i) => {
+             {ingredients && ingredients.map((ing, i) => { 
                 return (
                   <div key={i} className={css.spacedIngredients}>
                     <div className={css.spaced}>
@@ -302,6 +247,7 @@ function AddFood() {
                         id="ingredient"
                         onChange={(e) => changeIngredient(e, i)}
                         className={css.input2}
+                        value={ing.ingredient}
                       />
                     </div>
 
@@ -313,6 +259,7 @@ function AddFood() {
                         id="quantity"
                         onChange={(e) => changeIngredient(e, i)}
                         className={css.input2}
+                        value={ing.quantity}
                       />
                     </div>
 
@@ -323,6 +270,7 @@ function AddFood() {
                         id="unit"
                         onChange={(e) => changeIngredient(e, i)}
                         className={css.input1}
+                        value={ing.unit}
                       >
                         <option value="" hidden>
                           {" "}
