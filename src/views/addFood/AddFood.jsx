@@ -122,7 +122,7 @@ function AddFood() {
 
   return (
     <div className={css.addFood}>
-      <form>
+      <form className="form">
         <h2>Add a new recipe: </h2>
         <br />
         <div className={css.spaced}>
